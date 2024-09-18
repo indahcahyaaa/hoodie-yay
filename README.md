@@ -28,16 +28,16 @@ Pada urls.py, kita isi variable urlpatterns dengan path URL, yang akan digunakan
 
 -> Mengakses keempat URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman :
 Format XML :
-[]!(https://github.com/indahcahyaaa/hoodie-yay/blob/main/Format%20xml.png)
+![](https://github.com/indahcahyaaa/hoodie-yay/blob/main/Format%20xml.png)
 
 Format JSON:
-[]!(https://github.com/indahcahyaaa/hoodie-yay/blob/main/Format%20json.png)
+![](https://github.com/indahcahyaaa/hoodie-yay/blob/main/Format%20json.png)
 
 Format XML dengan ID :
-[]!(https://github.com/indahcahyaaa/hoodie-yay/blob/main/Format%20xml%20dengan%20id.png)
+![](https://github.com/indahcahyaaa/hoodie-yay/blob/main/Format%20xml%20dengan%20id.png)
 
 Format JSON dengan ID :
-[]!(https://github.com/indahcahyaaa/hoodie-yay/blob/main/Formal%20json%20dengan%20id.png)
+![](https://github.com/indahcahyaaa/hoodie-yay/blob/main/Formal%20json%20dengan%20id.png)
 
 # TUGAS INDIVIDU 2
 # 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
