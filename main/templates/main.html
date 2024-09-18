@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 <h5>Name: {{ name }}</h5>
 <h5>NPM: {{ npm }}</h5>
 <h5>Class: {{ class }}</h5>
@@ -11,5 +13,34 @@
     }
 </style>
 
+{% if not products_entries %}
+<p>Belum ada products yang ditambahkan pada hoodie-yay.</p>
+{% else %}
+<table>
+  <tr>
+    <th>Product Name</th>
+    <th>Price</th>
+    <th>Description</th>
+    <th>Stock</th>
+  </tr>
 
+  {% comment %} Berikut cara memperlihatkan data products di bawah baris ini 
+  {% endcomment %} 
+  {% for products in products_entries %}
+  <tr>
+    <td>{{products.name}}</td>
+    <td>{{products.price}}</td>
+    <td>{{products.description}}</td>
+    <td>{{products.stock}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+
+<br />
+
+<a href="{% url 'main:create_products_entry' %}">
+  <button>Add New Product</button>
+</a>
+{% endblock content %}
  
