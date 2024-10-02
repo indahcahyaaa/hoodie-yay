@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.shortcuts import reverse
 
 @login_required(login_url='/login')
 def show_main(request):
@@ -21,7 +22,7 @@ def show_main(request):
         'name': request.user.username,
         'npm' : '2306245453',
         'class': 'PBP A',
-        'brand': 'HOODIE-YAY✨', 
+        'brand': 'HOODIE-YAY!', 
         'last_login': request.COOKIES['last_login'],
     }
     return render(request, "main.html", context)
@@ -88,3 +89,26 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('main:login'))
     response.delete_cookie('last_login')
     return response 
+
+def edit_product(request, id):
+    # Get products berdasarkan id
+    product = Products.objects.get(pk = id)
+
+    #Set products sebagai instance dari form
+    form = ProductsForm(request.POST or None, instance=product)
+
+    if form.is_valid() and request.method == "POST" :
+        # Simpan form dan kembali ke halaman awal
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+    
+    context = {'form' : form}
+    return render(request, "edit_product.html", context)
+
+def delete_product(request, id):
+    # Get mood berdasarkan id
+    product = Products.objects.get(pk = id)
+    # Hapus mood
+    product.delete()
+    # Kembali ke halaman awal
+    return HttpResponseRedirect(reverse('main:show_main'))

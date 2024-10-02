@@ -10,6 +10,6 @@ class Products(models.Model):
     description = models.TextField()
     stock = models.IntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # image = models.URLField()
+    image = models.URLField()
 
     
