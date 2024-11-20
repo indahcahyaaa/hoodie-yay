@@ -7,6 +7,7 @@ from main.views import logout_user
 from main.views import edit_product
 from main.views import delete_product
 from main.views import add_products_ajax
+from main.views import create_mood_flutter
 
 app_name = 'main'
 
@@ -23,4 +24,5 @@ urlpatterns = [
     path('edit-product/<uuid:id>', edit_product, name='edit_product'),
     path('delete/<uuid:id>', delete_product, name='delete_product'),
     path('add-products-ajax', add_products_ajax, name='add_products_ajax'),
+    path('create-flutter/', create_mood_flutter, name='create_mood_flutter'),
 ]
